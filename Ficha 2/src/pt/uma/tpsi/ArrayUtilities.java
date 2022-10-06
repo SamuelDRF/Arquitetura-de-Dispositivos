@@ -71,12 +71,17 @@ public class ArrayUtilities {
         return toString(copy);
     }
     static String remove (int[] array,int number){
-        int[] copy = new int[array.length];
+        int l=0;
+        for (int i = 0; i < array.length; i++)
+            if (array[i]==number)
+                l++;
+
+        int[] copy = new int[array.length-l];
         int a=0;
         for (int i = 0; i < array.length; i++) {
+            copy[i-a]=array[i];
             if (array[i]==number)
                 a++;
-            copy[i-a]=array[i];
         }
         return toString(copy);
     }
