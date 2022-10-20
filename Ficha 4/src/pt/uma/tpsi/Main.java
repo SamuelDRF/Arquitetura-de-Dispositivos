@@ -25,7 +25,7 @@ public class Main {
         System.out.println("-------------------------------------");
 
         System.out.println(CharacterDrawingUtilities.drawElement('a')+" - drawElement");
-        System.out.println(CharacterDrawingUtilities.drawNewLine()+" - drawNewLine");
+        CharacterDrawingUtilities.drawNewLine(); System.out.println(" - drawNewLine");
         System.out.println(CharacterDrawingUtilities.drawHorizontalSegmentWith('a')+" - drawHorizontalSegmentWith");
         System.out.println(CharacterDrawingUtilities.drawFilledRectangleWith(3,5)+" - drawFilledRectangleWith");
         System.out.println(CharacterDrawingUtilities.drawEmptyRectangleWith(3,5)+" - drawEmptyRectangleWith");

@@ -6,9 +6,8 @@ public class CharacterDrawingUtilities {
         return null;
     }
 
-    static String drawNewLine (){
+    static void drawNewLine (){
         System.out.println();
-        return null;
     }
     static String drawHorizontalSegmentWith (char character){
         for (int i = 0; i < 50; i++)
