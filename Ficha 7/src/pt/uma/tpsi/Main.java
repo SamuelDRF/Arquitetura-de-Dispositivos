@@ -1,8 +1,6 @@
 package pt.uma.tpsi;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -68,6 +66,62 @@ public class Main {
 
         for (Rational element : rationals){
             System.out.println(element.toString());
+        }
+
+        System.out.println("--------------------------------------------------");
+
+        List<Student> students= new ArrayList<>();
+        students.add(new Student(1,"Ana"));
+        students.add(new Student(5,"Andres"));
+        students.add(new Student(3,"Jose"));
+        students.add(new Student(3,"Maria"));
+
+        for (Student student:students) {
+            System.out.println(student.toString());
+        }
+
+        Collections.sort(students);
+        System.out.println("ordenado por orden alfabetico");
+
+        for (Student student:students) {
+            System.out.println(student.toString());
+        }
+
+        Collections.sort(students, new StudentComparatorByNumber());
+        System.out.println("ordenado por numero forma 2");
+
+        for (Student student:students) {
+            System.out.println(student.toString());
+        }
+
+        Collections.sort(students, new StudentComparatorByName());
+        System.out.println("ordenado por nome forma 2");
+
+        for (Student student:students) {
+            System.out.println(student.toString());
+        }
+
+        Map<Integer, Student> studentMap = new HashMap<>();
+        studentMap.put(1,new Student(20,"Laura"));
+        studentMap.put(2,new Student(22,"Sofi"));
+        studentMap.put(3,new Student(19,"Sebas"));
+        studentMap.put(4,new Student(21,"Elio"));
+
+        System.out.println("Map with students: Show Keys");
+        System.out.println(studentMap.keySet());
+        for (Integer key : studentMap.keySet())
+            System.out.println(key);
+
+        System.out.println("Map with students: Show Keys and values");
+        System.out.println(studentMap.entrySet());
+        for (Integer key : studentMap.keySet())
+            System.out.println(key +" : " + studentMap.get(key));
+
+        System.out.println("'Sebas' is in Map?");
+        String nameToSearch="Sebas";
+        for (Student student : studentMap.values()){
+            if (student.getName().equals(nameToSearch))
+                System.out.println("True");
         }
         //Test---
     }

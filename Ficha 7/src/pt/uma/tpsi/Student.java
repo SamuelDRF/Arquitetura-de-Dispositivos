@@ -2,7 +2,7 @@ package pt.uma.tpsi;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
 
     //atributos
     private int number;
@@ -11,6 +11,10 @@ public class Student {
     //constructor
     public Student(int number, String name) {
         this.number = number;
+        this.name = name;
+    }
+    public Student(String name) {
+        this.number = 0;
         this.name = name;
     }
     public Student() {
@@ -48,4 +52,22 @@ public class Student {
     public int hashCode() {
         return Objects.hash(number, name);
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "number=" + number +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    public int compareTo(Student o) {
+        int result = number - o.getNumber();
+        if (result!=0)
+            return result;
+        return name.compareTo(o.getName());
+    }
+
+
+
 }
